@@ -39,7 +39,8 @@ Our users:
 * **Campus network users (including guests)**
   * UCLA VPN
 
-* **Researchers of specific collections under certain terms-of-use**
+* **Bespoke research website users**
+  * Sinai Manuscripts Digital Library
 
 ???
 
@@ -66,7 +67,8 @@ Our users:
 * **Campus network users (including guests)**
   * UCLA VPN
 
-* **Researchers of specific collections under certain terms-of-use**
+* **Bespoke research website users**
+  * Sinai Manuscripts Digital Library
 
 ???
 
@@ -106,10 +108,10 @@ Deliverables:
 
 ## Deployment status
 
-User group | Status | Items affected
+User group impl | Status | Items affected
 --- | --- | ---
-Campus network users | ✅ Deployed to prod <br> 📫 Publishing content | ~10<sup>1</sup> images (July 2023) <br> eventually ~10<sup>4</sup>
-Researchers of specific coll. | 🏚️ Bespoke auth remains | ~355,000 page images from 923 Sinai MSS <br> (Spring 2023)
+Campus network | ✅ In use in production <br> 📫 Publishing content | ~10<sup>1</sup> images (July 2023) <br> eventually ~10<sup>4</sup>
+Bespoke research website | 🏚️ Bespoke auth remains | ~355,000 page images from 923 Sinai MSS <br> (Spring 2023)
 
 ???
 
@@ -141,7 +143,7 @@ Researchers of specific coll. | 🏚️ Bespoke auth remains | ~355,000 page ima
 
 ---
 
-## Example content restricted to researchers of specific collections
+## Example content restricted to bespoke research website users
 
 .url[https://sinaimanuscripts.library.ucla.edu]
 
@@ -157,10 +159,10 @@ Researchers of specific coll. | 🏚️ Bespoke auth remains | ~355,000 page ima
 
 ## Evaluation + lessons learned
 
-User group | Rating | Comments
+User group impl | Rating | Comments
 --- | --- | ---
-Campus network users | .yellow[★★★].cyan[★★] | 👍 Configurable for any IPv4 network spec <br> 👎🏻 Same method of degradation applied to all images <br> 👎🏻 Single degraded tier; all-or-nothing access not allowed <br> 👎🏻 Doesn't support IPv6
-Researchers of specific coll. | .yellow[★].cyan[★★★★] | 👎🏻 Specific to the SMDL application <br> 👎🏻 Extremely brittle
+Campus network | .yellow[★★★].cyan[★★] | 👍 Configurable for any IPv4 network spec <br> 👎🏻 Same method of degradation applied to all images <br> 👎🏻 Single degraded tier; all-or-nothing access not allowed <br> 👎🏻 Doesn't support IPv6
+Bespoke research website | .yellow[★].cyan[★★★★] | 👎🏻 Must be implemented for each research site <br> 👎🏻 Extremely brittle
 
 ???
 
