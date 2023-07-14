@@ -35,21 +35,22 @@ Code4Lib SoCal : July 14, 2023
 ## Concepts
 
 * **IIIF:** API specs for _interoperable software to represent/deliver/render digital artifacts on the web_
-  * images, books, audio recordings, movies, 3D models, RDF graphs, etc.
+  * Images, books, audio recordings, movies, 3D models, arbitrary RDF graphs (someday 🫠)
 
 * **IIIF Auth:** interoperable access control
-  * spec describes behavior of both client (viewer) and server
-    * IIIF Auth 1.0 extends IIIF Image API
-  * "item" granularity, not "collection"
+  * Describes behavior of both client (viewer) and servers **to coordinate secure, authorized transfer of description resources (info.json) and content resources (images)**
 
 ???
 
 * _poll_:
-  1. Who (besides UCLA) is at an institution running IIIF software in production?
+  1. Who is familiar with IIIF? Who (besides UCLA) is at an institution running IIIF software in production?
   2. Anyone running IIIF Auth in production? Anyone experimented with it?
 * IIIF: Mirador, Universal Viewer, Cantaloupe, Loris
 * IIIF Auth:
   * we implemented 1.0
+  * a solution following browser security rules is non-trivial!
+  * version 1.0 extends IIIF Image API (conformant image servers must implement Auth spec)
+  * fine granularity
   * it works, but:
     * relies on web browser behavior re: third-party cookies that is being phased out by major vendors
     * is not generic/abstract enough for some use cases
@@ -241,8 +242,8 @@ static Future<Set<Row>> getFieldValue(String fieldName, int identifier, Pool dbC
 The old way:
 
 ```java
-static void getFieldValue(String fieldName, int identifier, Pool dbClient,
-                          Handler<AsyncResult<Set<Row>>>) { /** Descent into callback hell */ }
+static void getFieldValue(String fn, int id, Pool dbClient, Handler<AsyncResult<Set<Row>>>) {
+    /** Send caller into callback hell and/or NPE pitfall city */ }
 ```
 
 ???
