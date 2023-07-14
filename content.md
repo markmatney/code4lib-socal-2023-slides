@@ -18,7 +18,16 @@ Code4Lib SoCal : July 14, 2023
   * Mark @ UCLA Library SDLS / Services Team
 * going to talk about our IIIF Authentication API 1.0 implementation "Hauth"
   * (I think) pronunciation is the same as its cultural reference
-  * if you think you've got it, you should tell Joshua ;)
+  * if you think you've got the ref, you should let Joshua know at happy hour ;)
+* roadmap:
+  * review concepts
+  * outline our motivation (why we need IIIF Auth)
+  * implementation
+    * requirements
+    * development process
+    * evaluation
+    * lessons learned
+  * a bit about IIIF Auth 2.0
 
 ---
 
