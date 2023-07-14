@@ -15,45 +15,45 @@ Code4Lib SoCal : July 14, 2023
 
 * **_put cloned window in presenter mode_**
 * for those who don't know me:
-  * Mark @ UCLA Library SDLS / Services Team
+    * Mark @ UCLA Library SDLS / Services Team
 * going to talk about our IIIF Authentication API 1.0 implementation "Hauth"
-  * (I think) pronunciation is the same as its cultural reference
-  * if you think you've got the ref, you should let Joshua know at happy hour ;)
+    * (I think) pronunciation is the same as its cultural reference
+    * if you think you've got the ref, you should let Joshua know at happy hour ;)
 * roadmap:
-  * review concepts
-  * outline our motivation (why we need IIIF Auth)
-  * implementation
-    * requirements
-    * development process
-    * deployment status
-    * evaluation
-    * light implementation details
-  * a bit about IIIF Auth 2.0
+    * review concepts
+    * outline our motivation (why we need IIIF Auth)
+    * implementation
+        * requirements
+        * development process
+        * deployment status
+        * evaluation
+        * light implementation details
+    * a bit about IIIF Auth 2.0
 
 ---
 
 ## Concepts
 
 * **IIIF:** API specs for _interoperable software to represent/deliver/render digital artifacts on the web_
-  * Images, books, audio recordings, movies, 3D models, arbitrary RDF graphs (someday 🫠)
+    * Images, books, audio recordings, movies, 3D models, arbitrary RDF graphs (someday 🫠)
 
 * **IIIF Auth:** interoperable access control
-  * Describes behavior of both client (viewer) and servers **to coordinate secure, authorized transfer of description resources (info.json) and content resources (images)**
+    * Describes behavior of both client (viewer) and servers **to coordinate secure, authorized transfer of description resources (info.json) and content resources (images)**
 
 ???
 
 * _poll_:
-  1. Who is familiar with IIIF? Who (besides UCLA) is at an institution running IIIF software in production?
-  2. Anyone running IIIF Auth in production? Anyone experimented with it?
+    1. Who is familiar with IIIF? Who (besides UCLA) is at an institution running IIIF software in production?
+    2. Anyone running IIIF Auth in production? Anyone experimented with it?
 * IIIF: Mirador, Universal Viewer, Cantaloupe, Loris
 * IIIF Auth:
-  * we implemented 1.0
-  * a solution following browser security rules is non-trivial!
-  * version 1.0 extends IIIF Image API (conformant image servers must implement Auth spec)
-  * fine granularity
-  * it works, but:
-    * relies on web browser behavior re: third-party cookies that is being phased out by major vendors
-    * is not generic/abstract enough for some use cases
+    * we implemented 1.0
+    * a solution following browser security rules is non-trivial!
+    * version 1.0 extends IIIF Image API (conformant image servers must implement Auth spec)
+    * fine granularity
+    * it works, but:
+        * relies on web browser behavior re: third-party cookies that is being phased out by major vendors
+        * is not generic/abstract enough for some use cases
 
 ---
 
@@ -133,12 +133,12 @@ Deliverables:
 ???
 
 * code repositories
-  * in addition to server app, also needed to implement parts of the spec in Cantaloupe
+    * in addition to server app, also needed to implement parts of the spec in Cantaloupe
 * we finished the MVP almost a year ago, but were held up by implementation gaps in third-party apps
-  * our target IIIF viewer (UV) didn't fully implement the 1.0 spec
-    * for good reason: plans of browser vendors to tighten restrictions on third-party cookies known when we began
-  * Cantaloupe also lacked functionality
-  * the "Interoperability" I in IIIF is true, in theory
+    * our target IIIF viewer (UV) didn't fully implement the 1.0 spec
+        * for good reason: plans of browser vendors to tighten restrictions on third-party cookies known when we began
+    * Cantaloupe also lacked functionality
+    * the "Interoperability" I in IIIF is true, in theory
 * by Spring '23 we had begun to publish restricted materials
 
 ---
@@ -154,11 +154,11 @@ Bespoke research website | 🏚️ Bespoke auth remains | ~355,000 page images f
 
 * _how are we using Hauth at UCLA?_
 * so far: on the order of tens of images published (previously unpublished) that are restricted to campus network users
-  * exactly: 33-page document
-  * tens of thousands queued up
-  * several 1,000+ item collections, many smaller collections
+    * exactly: 33-page document
+    * tens of thousands queued up
+    * several 1,000+ item collections, many smaller collections
 * also so far: yet to migrate published Sinai materials to IIIF Auth
-  * lower priority
+    * lower priority
 * "derelict house building" emoji XD
 
 ---
@@ -173,14 +173,14 @@ Bespoke research website | .yellow[★].cyan[★★★★] | 👎🏻 Must be im
 ???
 
 * campus network users (IP address)
-  * configurable for any IPv4 network specification
-  * same method: size reduction ratio
-  * single tier, all or nothing not possible
-  * no IPv6 support
+    * configurable for any IPv4 network specification
+    * same method: size reduction ratio
+    * single tier, all or nothing not possible
+    * no IPv6 support
 * researchers (bespoke auth)
-  * just pretty bad
-  * probably could have implemented in a more general way
-  * Auth 2.0 seems to be more clear on how to implement this use case
+    * just pretty bad
+    * probably could have implemented in a more general way
+    * Auth 2.0 seems to be more clear on how to implement this use case
 
 ---
 
@@ -249,24 +249,24 @@ static void getFieldValue(String fn, int id, Pool dbClient, Handler<AsyncResult<
 ???
 
 * Vert.x
-  * library / application framework that we've used on several projects at UCLA Library
-  * basically: async types for building reactive, event-driven JVM apps
-    * performance
-  * contains:
-    * Netty
-    * OpenAPI tools (validation, etc.)
-    * async clients for making database queries, HTTP requests, etc.
-    * and more
-  * the `Future` type
-    * API methods often return it
-    * flatMap operation on it is key
-    * Vert.x v4 requires dealing with them
-      * v3 API methods often accepted a `null`-returning callback lambda, and returned `null` themselves
-      * `null`, `null` everywhere
-      * deprecated now
-    * however, long flatMap chains can be difficult to read
-      * give names to intermediate results
-      * practice with Java standard library types: `Stream`, `Optional`
+    * library / application framework that we've used on several projects at UCLA Library
+    * basically: async types for building reactive, event-driven JVM apps
+        * performance
+    * contains:
+        * Netty
+        * OpenAPI tools (validation, etc.)
+        * async clients for making database queries, HTTP requests, etc.
+        * and more
+    * the `Future` type
+        * API methods often return it
+        * flatMap operation on it is key
+        * Vert.x v4 requires dealing with them
+            * v3 API methods often accepted a `null`-returning callback lambda, and returned `null` themselves
+            * `null`, `null` everywhere
+            * deprecated now
+        * however, long flatMap chains can be difficult to read
+            * give names to intermediate results
+            * practice with Java standard library types: `Stream`, `Optional`
 
 ---
 
@@ -297,7 +297,7 @@ static boolean isOnNetwork(Ip4 ipAddress, Cidr4Trie<String> networkSubnets) {
 
 * Duplication of cookie decryption algorithm used by content provider site
 
-  * Duplication of secret key
+    * Duplication of secret key
 
 ???
 
@@ -318,8 +318,8 @@ Essentially: a more general data model / higher level of abstraction
 ???
 
 * the HTTP Cookie header is no longer the required "authorizing aspect" of the client
-  * new possibilities: IP address, User-Agent, etc.
-  * no more unnecessary access cookies for IP address-based auth, for example
+    * new possibilities: IP address, User-Agent, etc.
+    * no more unnecessary access cookies for IP address-based auth, for example
 * info.json is no longer the carrier of a resource's auth requirements: "probe service"
 * can have a one-to-many relationship between a content resource and auth services
 
@@ -333,8 +333,8 @@ I have lots of questions
 
 * tbh: my understanding of Auth 2.0 is still fuzzy
 * however, I believe that much of Hauth can be generalized / reused in a 2.0 impl
-  * "campus network user" impl can be simplified (no access cookie needed)
-  * 2.0 seems to more clearly suggest a general implementation for "bespoke research site user" impl
+    * "campus network user" impl can be simplified (no access cookie needed)
+    * 2.0 seems to more clearly suggest a general implementation for "bespoke research site user" impl
 
 ---
 
