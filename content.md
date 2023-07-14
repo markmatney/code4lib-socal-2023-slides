@@ -167,7 +167,7 @@ Bespoke research website | 🏚️ Bespoke auth remains | ~355,000 page images f
 
 User group impl | Rating | Comments
 --- | --- | ---
-Campus network | .yellow[★★★].cyan[★★] | 👍 Configurable for any IPv4 network spec <br> 👎🏻 Same method of degradation applied to all images <br> 👎🏻 Single degraded tier; all-or-nothing access not allowed <br> 👎🏻 Doesn't support IPv6
+Campus network | .yellow[★★★].cyan[★★] | 👍 Configurable for any IPv4 network spec <br> 👎🏻 Same method of degradation applied to all images <br> 👎🏻 Single degraded tier; all-or-nothing access not allowed <br> 👎🏻 Doesn't support IPv6 network spec
 Bespoke research website | .yellow[★].cyan[★★★★] | 👎🏻 Must be implemented for each research site <br> 👎🏻 Extremely brittle
 
 ???
@@ -242,7 +242,7 @@ static Future<Set<Row>> getFieldValue(String fieldName, int identifier, Pool dbC
 The old way:
 
 ```java
-static void getFieldValue(String fn, int id, Pool dbClient, Handler<AsyncResult<Set<Row>>>) {
+static void getFieldValue(String fn, int id, Pool dbClient, Handler<AsyncResult<Set<Row>>> h) {
     /** Send caller into callback hell and/or NPE pitfall city */ }
 ```
 
@@ -342,7 +342,7 @@ I have lots of questions
 
 <a href="mailto:mmatney@library.ucla.edu">mmatney@library.ucla.edu</a>
 
-Code4Lib, UC Tech Slack: @markmatney
+Code4Lib, UC Tech, IIIF Slack: @markmatney
 
 ![QR encoding of slides URL][slides]
 
