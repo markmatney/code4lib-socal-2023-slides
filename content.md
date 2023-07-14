@@ -154,6 +154,27 @@ Bespoke research website | 🏚️ Bespoke auth remains | ~355,000 page images f
 
 ---
 
+## Evaluation
+
+User group impl | Rating | Comments
+--- | --- | ---
+Campus network | .yellow[★★★].cyan[★★] | 👍 Configurable for any IPv4 network spec <br> 👎🏻 Same method of degradation applied to all images <br> 👎🏻 Single degraded tier; all-or-nothing access not allowed <br> 👎🏻 Doesn't support IPv6
+Bespoke research website | .yellow[★].cyan[★★★★] | 👎🏻 Must be implemented for each research site <br> 👎🏻 Extremely brittle
+
+???
+
+* campus network users (IP address)
+  * configurable for any IPv4 network specification
+  * same method: size reduction ratio
+  * single tier, all or nothing not possible
+  * no IPv6 support
+* researchers (bespoke auth)
+  * just pretty bad
+  * probably could have implemented in a more general way
+  * Auth 2.0 seems to be more clear on how to implement this use case
+
+---
+
 ## Example content restricted to campus network users
 
 .url[https://digital.library.ucla.edu/catalog/ark:/21198/zz002dwzpk]
@@ -182,29 +203,6 @@ Bespoke research website | 🏚️ Bespoke auth remains | ~355,000 page images f
 ???
 
 * access to these materials is still determined by the site's bespoke authentication mechanism
-
----
-
-## Evaluation + lessons learned
-
-User group impl | Rating | Comments
---- | --- | ---
-Campus network | .yellow[★★★].cyan[★★] | 👍 Configurable for any IPv4 network spec <br> 👎🏻 Same method of degradation applied to all images <br> 👎🏻 Single degraded tier; all-or-nothing access not allowed <br> 👎🏻 Doesn't support IPv6
-Bespoke research website | .yellow[★].cyan[★★★★] | 👎🏻 Must be implemented for each research site <br> 👎🏻 Extremely brittle
-
-???
-
-* campus network users (IP address)
-  * configurable for any IPv4 network specification
-  * same method: size reduction ratio
-  * single tier, all or nothing not possible
-  * no IPv6 support
-* researchers (bespoke auth)
-  * just pretty bad
-  * probably could have implemented in a more general way
-  * Auth 2.0 seems to be more clear on how to implement this use case
-* additionally:
-  * access cookies don't need to be encrypted, just signed (HMAC); won't matter for Auth 2.0 impl
 
 ---
 
@@ -295,6 +293,13 @@ static boolean isOnNetwork(Ip4 ipAddress, Cidr4Trie<String> networkSubnets) {
 ???
 
 * this impl not ideal due to the duplication (DRY)
+
+---
+
+## Lessons learned
+
+* additionally:
+  * access cookies don't need to be encrypted, just signed (HMAC); won't matter for Auth 2.0 impl
 
 ---
 
