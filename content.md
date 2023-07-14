@@ -38,14 +38,21 @@ Code4Lib SoCal : July 14, 2023
   * images, books, audio recordings, movies, 3D models, RDF graphs, etc.
 
 * **IIIF Auth:** interoperable access control
+  * spec describes behavior of both client (viewer) and server
+    * IIIF Auth 1.0 extends IIIF Image API
   * "item" granularity, not "collection"
 
 ???
 
-* IIIF: Mirador, Universal Viewer, Cantaloupe, Loris
 * _poll_:
   1. Who (besides UCLA) is at an institution running IIIF software in production?
   2. Anyone running IIIF Auth in production? Anyone experimented with it?
+* IIIF: Mirador, Universal Viewer, Cantaloupe, Loris
+* IIIF Auth:
+  * we implemented 1.0
+  * it works, but:
+    * relies on web browser behavior re: third-party cookies that is being phased out by major vendors
+    * is not generic/abstract enough for some use cases
 
 ---
 
