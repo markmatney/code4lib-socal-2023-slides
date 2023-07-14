@@ -7,8 +7,17 @@ body {
     background-color: #2774AE;
 }
 
+.remark-slide-number {
+    color: #DAEBFE;
+    opacity: 1;
+}
+
 .remark-code-line-highlighted {
     background-color: #00FF87;
+}
+
+.remark-notes {
+    font-size: 1.25rem;
 }
 
 h1, h2, .ucla-gold {
@@ -35,6 +44,14 @@ h1, h2, h3, h4, h5, h6 {
     color: #00FFFF;
 }
 
+.gray {
+    color: gray;
+}
+
+a {
+    font-family: monospace;
+}
+
 a:link, a:visited, a:hover, a:active {
     color: white;
     text-decoration: none;
@@ -46,4 +63,5 @@ table {
 
 td, th {
     padding: 0.6rem 0.8rem;
+    text-align: left;
 }
