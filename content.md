@@ -315,7 +315,11 @@ Essentially: a more general data model / higher level of abstraction
 
 ???
 
-FIXME
+* the HTTP Cookie header is no longer the required "authorizing aspect" of the client
+  * new possibilities: IP address, User-Agent, etc.
+  * no more unnecessary access cookies for IP address-based auth, for example
+* info.json is no longer the carrier of a resource's auth requirements: "probe service"
+* can have a one-to-many relationship between a content resource and auth services
 
 ---
 
@@ -325,7 +329,10 @@ I have lots of questions
 
 ???
 
-FIXME
+* tbh: my understanding of Auth 2.0 is still fuzzy
+* however, I believe that much of Hauth can be generalized / reused in a 2.0 impl
+  * "campus network user" impl can be simplified (no access cookie needed)
+  * 2.0 seems to more clearly suggest a general implementation for "bespoke research site user" impl
 
 ---
 
