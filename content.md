@@ -25,8 +25,9 @@ Code4Lib SoCal : July 14, 2023
   * implementation
     * requirements
     * development process
+    * deployment status
     * evaluation
-    * lessons learned
+    * light implementation details
   * a bit about IIIF Auth 2.0
 
 ---
@@ -293,13 +294,6 @@ static boolean isOnNetwork(Ip4 ipAddress, Cidr4Trie<String> networkSubnets) {
 ???
 
 * this impl not ideal due to the duplication (DRY)
-
----
-
-## Lessons learned
-
-* additionally:
-  * access cookies don't need to be encrypted, just signed (HMAC); won't matter for Auth 2.0 impl
 
 ---
 
