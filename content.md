@@ -22,35 +22,6 @@ Code4Lib SoCal : July 14, 2023
 
 ---
 
-## Development timeline
-
-**Start:** Summer '21
-
-**MVP finish:** Fall '22
-
-**In production:** Spring '23
-
-Deliverables:
-
-* https://github.com/UCLALibrary/hauth
-
-* https://github.com/UCLALibrary/cantaloupe-auth-delegate
-
-* https://github.com/UCLALibrary/docker-cantaloupe/tree/main/src/main/docker/patches
-
-* https://github.com/UniversalViewer/universalviewer/issues/860
-
-???
-
-* code repositories
-  * in addition to server app, also needed to implement parts of the spec in Cantaloupe
-* we finished the MVP almost a year ago, but our target IIIF viewer (UV) didn't fully implement the 1.0 spec
-  * for good reason: plans of browser vendors to tighten restrictions on third-party cookies known when we began
-  * the "Interoperability" I in IIIF is true, in theory
-* by Spring '23 we had begun to publish restricted materials
-
----
-
 ## Motivation
 
 Our users:
@@ -101,6 +72,35 @@ Our users:
 
 * for v1: targeted simplest, most well-defined methods of determining user group membership
 * e.g., don't deal with SSO, MFA schemes, etc.
+
+---
+
+## Development timeline
+
+**Start:** Summer '21
+
+**MVP finish:** Fall '22
+
+**In production:** Spring '23
+
+Deliverables:
+
+* https://github.com/UCLALibrary/hauth
+
+* https://github.com/UCLALibrary/cantaloupe-auth-delegate
+
+* https://github.com/UCLALibrary/docker-cantaloupe/tree/main/src/main/docker/patches
+
+* https://github.com/UniversalViewer/universalviewer/issues/860
+
+???
+
+* code repositories
+  * in addition to server app, also needed to implement parts of the spec in Cantaloupe
+* we finished the MVP almost a year ago, but our target IIIF viewer (UV) didn't fully implement the 1.0 spec
+  * for good reason: plans of browser vendors to tighten restrictions on third-party cookies known when we began
+  * the "Interoperability" I in IIIF is true, in theory
+* by Spring '23 we had begun to publish restricted materials
 
 ---
 
