@@ -31,6 +31,23 @@ Code4Lib SoCal : July 14, 2023
 
 ---
 
+## Concepts
+
+* **IIIF:** API specs for _interoperable software to represent/deliver/render digital artifacts on the web_
+  * images, books, audio recordings, movies, 3D models, RDF graphs, etc.
+
+* **IIIF Auth:** interoperable access control
+  * "item" granularity, not "collection"
+
+???
+
+* IIIF: Mirador, Universal Viewer, Cantaloupe, Loris
+* _poll_:
+  1. Who (besides UCLA) is at an institution running IIIF software in production?
+  2. Anyone running IIIF Auth in production? Anyone experimented with it?
+
+---
+
 ## Motivation
 
 Our users:
