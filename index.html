@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IIIF Authentication at UCLA in 2023 | Code4Lib SoCal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://csstools.github.io/normalize.css/11.0.0/normalize.css">
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+    <textarea id="source"></textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script>
+      async function loadResources() {
+        const config = fetch("./config.json").then(res => res.json())
+        const content = fetch("./content.md").then(res => res.text())
+
+        return Promise.all([config, content])
+      }
+
+      loadResources().then(([config, content]) => {
+        document.getElementById("source").innerHTML = content
+        remark.create(config)
+      })
+    </script>
+  </body>
+</html>

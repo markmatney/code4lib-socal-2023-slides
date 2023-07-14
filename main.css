@@ -1,0 +1,49 @@
+body {
+    color: white;
+    font-family: 'Sans Serif';
+}
+
+.remark-slide-content {
+    background-color: #2774AE;
+}
+
+.remark-code-line-highlighted {
+    background-color: #00FF87;
+}
+
+h1, h2, .ucla-gold {
+    color: #FFD100;
+}
+
+h3, h4, h5, h6 {
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.ucla-blue {
+    color: #2774AE;
+}
+
+.yellow {
+    color: #FFFF00;
+}
+
+.cyan {
+    color: #00FFFF;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: white;
+    text-decoration: none;
+}
+
+table {
+    line-height: 1.5;
+}
+
+td, th {
+    padding: 0.6rem 0.8rem;
+}
