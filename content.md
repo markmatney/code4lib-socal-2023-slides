@@ -70,7 +70,7 @@ Our users:
 
 ???
 
-* _why does UCLA Library need authentication for some of its content resources?_
+* _why does UCLA Library need access control for some of its content resources?_
 * answer (complicated): copyright, money, etc.
 * answer (simpler): we have identified lots of materials for which access is conditioned upon membership in a particular user group
 
@@ -125,8 +125,10 @@ Deliverables:
 
 * code repositories
   * in addition to server app, also needed to implement parts of the spec in Cantaloupe
-* we finished the MVP almost a year ago, but our target IIIF viewer (UV) didn't fully implement the 1.0 spec
-  * for good reason: plans of browser vendors to tighten restrictions on third-party cookies known when we began
+* we finished the MVP almost a year ago, but were held up by implementation gaps in third-party apps
+  * our target IIIF viewer (UV) didn't fully implement the 1.0 spec
+    * for good reason: plans of browser vendors to tighten restrictions on third-party cookies known when we began
+  * Cantaloupe also lacked functionality
   * the "Interoperability" I in IIIF is true, in theory
 * by Spring '23 we had begun to publish restricted materials
 
@@ -280,7 +282,7 @@ static boolean isOnNetwork(Ip4 ipAddress, Cidr4Trie<String> networkSubnets) {
 ???
 
 * third-party Java library that implements a CIDR radix tree
-* seems to be common use case of trie, so impls in other languages should be available (hopefully)
+* seems to be common use case of trie, so hopeful that impls in other languages are available
 
 ---
 
