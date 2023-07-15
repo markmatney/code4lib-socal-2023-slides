@@ -126,9 +126,13 @@ Deliverables:
 
 * https://github.com/UCLALibrary/cantaloupe-auth-delegate
 
+* https://github.com/UCLALibrary/docker-cantaloupe **
+
 * https://github.com/UCLALibrary/docker-cantaloupe/tree/main/src/main/docker/patches
 
 * https://github.com/UniversalViewer/universalviewer/issues/860
+
+<footnote>** critical component developed prior to inception of Hauth codebase.</footnote>
 
 ???
 

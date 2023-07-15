@@ -54,6 +54,10 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
+footnote {
+    font-size: 1rem;
+}
+
 table {
     line-height: 1.5;
 }
